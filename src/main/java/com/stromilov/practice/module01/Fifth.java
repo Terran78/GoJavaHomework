@@ -1,4 +1,4 @@
-package com.stromilov.practice.modul01;
+package com.stromilov.practice.module01;
 
 public class Fifth {
     public static void main(String[] args) {
