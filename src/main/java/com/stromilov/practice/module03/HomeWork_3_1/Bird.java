@@ -1,4 +1,4 @@
-package com.stromilov.practice.module03;
+package com.stromilov.practice.module03.HomeWork_3_1;
 
 public class Bird extends Walk {
 
