@@ -1,6 +1,5 @@
 package com.stromilov.practice.module4;
 
-import java.util.Currency;
 
 public abstract class Bank {
 
