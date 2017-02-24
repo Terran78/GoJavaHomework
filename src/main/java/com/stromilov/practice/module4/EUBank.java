@@ -1,26 +1,25 @@
 package com.stromilov.practice.module4;
 
-/**
- * Created by Admin on 22.02.2017.
- */
+import java.util.Currency;
+
 public class EUBank extends Bank {
 
-    @Override
+    public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
+    }
+
     int getLimitOfWithdrawal() {
         return 0;
     }
 
-    @Override
     int getLimitOfFunding() {
         return 0;
     }
 
-    @Override
     int getMonthlyRate() {
         return 0;
     }
 
-    @Override
     int getCommission(int summ) {
         return 0;
     }
