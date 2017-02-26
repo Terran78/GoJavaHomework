@@ -78,13 +78,13 @@ public class User {
     @Override
     public String toString() {
         return "User {" +
-                "id: "                 + id +
-                "name: "               + name +
-                "balance: "            + balance +
-                "monthsOfEmployment: " + monthsOfEmployment +
-                "companyName"          + companyName +
-                "salary"               + salary +
-                "bank"                 + bank +
-                "}";
+                " Id: "                 + id +
+                " Name: "               + name +
+                " Balance: "            + balance +
+                " MonthsOfEmployment: " + monthsOfEmployment +
+                " CompanyName: "        + companyName +
+                " Salary: "             + salary +
+                " Bank: "               + bank.getBankCountry() +
+                " }";
     }
 }
