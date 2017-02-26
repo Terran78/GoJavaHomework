@@ -4,7 +4,7 @@ public class BankSystemImpl implements BankSystem {
 
     @Override
     public void withdrawOfUser(User user, int amount) {
-        if (amount != 0) {
+        if (amount != 0 && user.getBank() != null) {
             Bank userBank = user.getBank();
             double commission = (userBank.getCommission(amount));
             System.out.println("Balance: " + user.getBalance() + " Limit withdrawal: "+userBank.getLimitOfWithdrawal()+" Sum withdraw: "+amount+" Commission: "+ amount*commission/100);
@@ -20,7 +20,7 @@ public class BankSystemImpl implements BankSystem {
     }
 
     public void fundUser(User user, int amount) {
-        if (amount != 0) {
+        if (amount != 0 && user.getBank() != null) {
             Bank userBank = user.getBank();
             System.out.println("Limit of fund: " + userBank.getLimitOfFunding() + "Sum Fund: " + amount);
             if (isCheckLimitFunding(user, amount)) {
@@ -34,10 +34,9 @@ public class BankSystemImpl implements BankSystem {
     }
 
     public void transferMoney(User fromUser, User toUser, int amount) {
-        if (amount != 0) {
+        if (amount != 0 && fromUser.getBank() != null) {
             Bank fromUserBank = fromUser.getBank();
             double comission = fromUserBank.getCommission(amount);
-//            System.out.println("Amount: " + amount + " Comis: " + comission);
             if (isCheckLimitWithdrawal(fromUser, amount) && isCheckLimitFunding(toUser,amount)) {
                 fromUser.setBalance(fromUser.getBalance() - (amount + (amount * comission/100)));
                 toUser.setBalance(toUser.getBalance() + amount);
@@ -53,14 +52,17 @@ public class BankSystemImpl implements BankSystem {
     }
 
     private boolean isCheckLimitWithdrawal(User user, int amount) {
-        Bank userBank = user.getBank();
-        double comission = userBank.getCommission(amount);
-//        System.out.println("Amount: " + amount + " Comis: " + comission);
-        return userBank.getLimitOfWithdrawal() >= amount + (amount * comission/100);
+        if (amount != 0 && user.getBank() != null) {
+            Bank userBank = user.getBank();
+            double comission = userBank.getCommission(amount);
+            return userBank.getLimitOfWithdrawal() >= amount + (amount * comission/100);
+        } else return false;
     }
     private boolean isCheckLimitFunding(User user, int amount) {
-        Bank userBank = user.getBank();
-        return userBank.getLimitOfFunding() >= amount ;
+        if (amount != 0 && user.getBank() != null) {
+            Bank userBank = user.getBank();
+            return userBank.getLimitOfFunding() >= amount ;
+        } else return false;
     }
 
 }
