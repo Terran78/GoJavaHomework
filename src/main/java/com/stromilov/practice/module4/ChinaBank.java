@@ -45,6 +45,6 @@ public class ChinaBank extends Bank {
 
     @Override
     double moneyPaidMonthlyForSalary() {
-        return super.moneyPaidMonthlyForSalary();
+        return numberOfEmployees * avrSalaryOfEmployee;
     }
 }
