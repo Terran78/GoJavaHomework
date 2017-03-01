@@ -10,6 +10,26 @@ public class Room {
     String hotelName;
     String cityName;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Room room = (Room) o;
+
+        if (getPrice() != room.getPrice()) return false;
+        if (getPersons() != room.getPersons()) return false;
+        return !(getCityName() != null ? getCityName().equals(room.getCityName()) : room.getCityName() != null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getPrice();
+        result = 31 * result + getPersons();
+        result = 31 * result + (getCityName() != null ? getCityName().hashCode() : 0);
+        return result;
+    }
+
     public long getId() {
         return id;
     }
