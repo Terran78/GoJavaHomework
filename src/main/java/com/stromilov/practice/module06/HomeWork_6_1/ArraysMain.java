@@ -1,8 +1,8 @@
-package com.stromilov.practice.module06;
+package com.stromilov.practice.module06.HomeWork_6_1;
 
 import java.util.Arrays;
 
-import static com.stromilov.practice.module06.ArraysUtils.*;
+import static com.stromilov.practice.module06.HomeWork_6_1.ArraysUtils.*;
 
 public class ArraysMain {
     public static void main(String[] args) {

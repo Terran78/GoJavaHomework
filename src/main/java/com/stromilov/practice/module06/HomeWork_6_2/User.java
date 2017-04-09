@@ -15,4 +15,54 @@ public final class User {
         this.salary = salary;
         this.balance = balance;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "User {" +
+                " Id: "                 + id +
+                " FirstName: "          + firstName +
+                " SecondName: "         + lastName +
+                " Salary: "             + salary +
+                " Balance: "            + balance +
+                " }";    }
 }

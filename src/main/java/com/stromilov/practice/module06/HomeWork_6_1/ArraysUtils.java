@@ -1,4 +1,4 @@
-package com.stromilov.practice.module06;
+package com.stromilov.practice.module06.HomeWork_6_1;
 
 final class ArraysUtils {
 
