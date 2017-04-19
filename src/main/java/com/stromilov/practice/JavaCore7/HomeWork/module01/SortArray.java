@@ -10,7 +10,7 @@ public class SortArray {
             System.out.println("Enter number " + (i+1));
             arrayNumber[i] = Integer.parseInt(scanner.nextLine());
         }
-
+        scanner.close();
         System.out.print("Initial array: ");
         for (int i = 0; i < 5; i++) {
             System.out.print(arrayNumber[i]);
